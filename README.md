@@ -2,6 +2,8 @@
 
 Neuroverse is a hyper-premium, cinematic scrollytelling web experience that functions as a live biological dashboard. It features a hardware-accelerated 360-degree rotating 3D brain, seamlessly transitioning between an auto-playing hero sequence, scroll-driven interactive anatomy breakdowns, and a live telemetry dashboard.
 
+https://github.com/user-attachments/assets/12e2d680-c011-4bfb-b3fe-c8c058465798
+
 ## Tech Stack
 
 Framework: Next.js 14 (App Router)
