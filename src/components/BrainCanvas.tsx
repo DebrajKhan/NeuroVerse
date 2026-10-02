@@ -86,13 +86,15 @@ export default function BrainCanvas({ scrollProgress }: { scrollProgress: Motion
 
     const draw = () => {
       const p = scrollProgress.get();
+      const BUFFER_THRESHOLD = 0.03;
       
-      if (p <= 0 || p >= 1) {
-        // Autonomous rotation at 0% and 100%
+      if (p <= BUFFER_THRESHOLD || p >= 1) {
+        // Autonomous rotation at buffer zone (0-3%) and 100%
         currentFrameFloat = (currentFrameFloat + playbackSpeed) % TOTAL_FRAMES;
       } else {
-        // Scrub based on scroll progress
-        const targetFrame = p * (TOTAL_FRAMES - 1);
+        // Scrub based on remaining scroll progress (3% to 100%)
+        const scrubProgress = (p - BUFFER_THRESHOLD) / (1 - BUFFER_THRESHOLD);
+        const targetFrame = scrubProgress * (TOTAL_FRAMES - 1);
         // Lerp for buttery smoothness without flicker
         currentFrameFloat += (targetFrame - currentFrameFloat) * 0.1;
         if (currentFrameFloat < 0) currentFrameFloat = 0;
