@@ -61,4 +61,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Deployment
 
-Otherwise navigate to http://localhost:3000 to view the live dashboard.
+Otherwise navigate to (https://neuro-verse-beta.vercel.app/) to view the live dashboard.
